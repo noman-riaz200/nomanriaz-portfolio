@@ -1,0 +1,656 @@
+export interface Project {
+  id: string
+  title: string
+  description: string
+  image: string
+  technologies: string[]
+  liveUrl?: string
+  githubUrl?: string
+  featured: boolean
+}
+
+export interface Skill {
+  id: string
+  name: string
+  icon: string
+  level: number
+  category: 'frontend' | 'backend' | 'database' | 'tools'
+}
+
+export interface Service {
+  id: string
+  title: string
+  description: string
+  icon: string
+  features: string[]
+}
+
+export interface Testimonial {
+  id: string
+  name: string
+  position: string
+  company: string
+  image: string
+  message: string
+  rating: number
+}
+
+export const personalInfo = {
+  name: 'Muhammad Noman Riaz',
+  title: 'Full Stack Web Developer',
+  tagline: 'Crafting Digital Excellence with Modern Web Technologies',
+  email: 'noman2ac@gmail.com',
+  phone: '+92 307 8890235',
+  location: 'Multan,Pakistan',
+  availability: 'Available for Freelance',
+  profileImage: '/profile.jpg',
+  bio: `I'm a passionate Full Stack Web Developer with over 5 years of experience in building modern, scalable, and high-performance web applications. My expertise spans across both frontend and backend technologies, allowing me to create complete digital solutions from concept to deployment.
+
+I specialize in Laravel, MERN Stack, and Next.js, with a strong foundation in PHP, JavaScript, TypeScript, and various databases. I love turning complex problems into simple, beautiful, and intuitive designs.
+
+When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.`,
+  socialLinks: {
+    github: 'https://github.com/nomanriaz',
+    linkedin: 'https://linkedin.com/in/nomanriaz',
+    whatsapp: 'https://wa.me/923078890235',
+    twitter: 'https://twitter.com/nomanriaz',
+  },
+}
+
+export const skills: Skill[] = [
+  // Frontend
+  { id: '1', name: 'React.js', icon: 'react', level: 95, category: 'frontend' },
+  { id: '2', name: 'Next.js', icon: 'nextjs', level: 90, category: 'frontend' },
+  { id: '3', name: 'TypeScript', icon: 'typescript', level: 88, category: 'frontend' },
+  { id: '4', name: 'HTML5', icon: 'html', level: 98, category: 'frontend' },
+  { id: '5', name: 'CSS3', icon: 'css', level: 95, category: 'frontend' },
+  { id: '6', name: 'Tailwind CSS', icon: 'tailwind', level: 92, category: 'frontend' },
+  { id: '7', name: 'Bootstrap', icon: 'bootstrap', level: 90, category: 'frontend' },
+  { id: '8', name: 'JavaScript', icon: 'javascript', level: 95, category: 'frontend' },
+  
+  // Backend
+  { id: '9', name: 'Laravel', icon: 'laravel', level: 92, category: 'backend' },
+  { id: '10', name: 'Node.js', icon: 'nodejs', level: 88, category: 'backend' },
+  { id: '11', name: 'Express.js', icon: 'express', level: 85, category: 'backend' },
+  { id: '12', name: 'PHP', icon: 'php', level: 90, category: 'backend' },
+  { id: '13', name: 'REST APIs', icon: 'api', level: 92, category: 'backend' },
+  
+  // Database
+  { id: '14', name: 'MongoDB', icon: 'mongodb', level: 88, category: 'database' },
+  { id: '15', name: 'MySQL', icon: 'mysql', level: 90, category: 'database' },
+  { id: '16', name: 'PostgreSQL', icon: 'postgresql', level: 80, category: 'database' },
+  
+  // Tools
+  { id: '17', name: 'Git', icon: 'git', level: 92, category: 'tools' },
+  { id: '18', name: 'Docker', icon: 'docker', level: 75, category: 'tools' },
+  { id: '19', name: 'AWS', icon: 'aws', level: 70, category: 'tools' },
+  { id: '20', name: 'Figma', icon: 'figma', level: 80, category: 'tools' },
+]
+
+export const services: Service[] = [
+  {
+    id: '1',
+    title: 'Web Development',
+    description: 'Custom web applications built with modern technologies like Next.js, React, Laravel, and Node.js.',
+    icon: 'code',
+    features: [
+      'Custom Web Applications',
+      'Single Page Applications (SPA)',
+      'Progressive Web Apps (PWA)',
+      'E-commerce Solutions',
+      'CMS Development',
+    ],
+  },
+  {
+    id: '2',
+    title: 'Frontend Development',
+    description: 'Beautiful, responsive, and interactive user interfaces with modern frontend frameworks.',
+    icon: 'layout',
+    features: [
+      'Responsive Design',
+      'UI/UX Implementation',
+      'React/Next.js Development',
+      'Animation & Interactions',
+      'Performance Optimization',
+    ],
+  },
+  {
+    id: '3',
+    title: 'Backend Development',
+    description: 'Robust and scalable server-side solutions with secure APIs and database management.',
+    icon: 'server',
+    features: [
+      'RESTful API Development',
+      'Authentication & Security',
+      'Database Design',
+      'Server Configuration',
+      'Third-party Integrations',
+    ],
+  },
+  {
+    id: '4',
+    title: 'Consulting & Support',
+    description: 'Expert advice on technology choices, architecture design, and project optimization.',
+    icon: 'message-circle',
+    features: [
+      'Technical Consulting',
+      'Code Review',
+      'Performance Audits',
+      'Migration Services',
+      'Ongoing Support',
+    ],
+  },
+]
+
+export const projects: Project[] = [
+  {
+    id: '1',
+    title: 'E-Commerce Platform',
+    description: 'A full-featured e-commerce platform with admin dashboard, payment integration, inventory management, and real-time order tracking.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'Laravel', 'MongoDB', 'Stripe'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: '2',
+    title: 'SaaS Dashboard',
+    description: 'Analytics dashboard with real-time data visualization, user management, customizable reports, and team collaboration features.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Chart.js'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '3',
+    title: 'Social Media App',
+    description: 'Social networking platform with real-time messaging, post creation, likes, comments, and user profiles.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Socket.io', 'MongoDB', 'Tailwind CSS'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: '4',
+    title: 'Portfolio CMS',
+    description: 'Content management system for portfolios with drag-and-drop page builder, media library, and SEO tools.',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'PHP', 'MySQL', 'Vue.js'],
+    featured: false,
+  },
+  {
+    id: '5',
+    title: 'Task Management App',
+    description: 'Productivity application with Kanban boards, task assignments, due dates, and team collaboration.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '6',
+    title: 'Restaurant Booking',
+    description: 'Restaurant reservation system with table management, online ordering, and customer loyalty program.',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Laravel', 'MySQL', 'Stripe'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '7',
+    title: 'Healthcare Portal',
+    description: 'Medical appointment booking system with patient records, doctor schedules, and telemedicine features.',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'WebRTC'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '8',
+    title: 'Real Estate Platform',
+    description: 'Property listing website with advanced filters, virtual tours, and agent management system.',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Three.js'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: '9',
+    title: 'Learning Management System',
+    description: 'Online education platform with video courses, quizzes, progress tracking, and certificate generation.',
+    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Laravel', 'MySQL', 'AWS'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '10',
+    title: 'Inventory Management',
+    description: 'Stock management system with barcode scanning, purchase orders, and automated reorder alerts.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '11',
+    title: 'Food Delivery App',
+    description: 'Food delivery platform with real-time tracking, restaurant management, and customer reviews.',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'React Native', 'Laravel', 'MySQL'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '12',
+    title: 'Hotel Booking System',
+    description: 'Hotel reservation system with room availability, payment processing, and guest management.',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '13',
+    title: 'Crypto Trading Platform',
+    description: 'Cryptocurrency exchange platform with real-time charts, wallet integration, and trading features.',
+    image: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'WebSocket'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '14',
+    title: 'Blog Platform',
+    description: 'Content management system for blogging with SEO optimization, categories, and newsletter integration.',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+  {
+    id: '15',
+    title: 'Job Portal',
+    description: 'Job listing platform with resume upload, company profiles, and application tracking system.',
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'React', 'MySQL', 'Tailwind CSS'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '16',
+    title: 'Event Management System',
+    description: 'Event planning platform with ticketing, attendee management, and scheduling features.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Stripe'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '17',
+    title: 'Fitness Tracking App',
+    description: 'Health and fitness application with workout plans, progress tracking, and nutrition planning.',
+    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop',
+    technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '18',
+    title: 'Online Examination System',
+    description: 'Online testing platform with timed quizzes, automated grading, and result analytics.',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'JavaScript'],
+    featured: false,
+  },
+  {
+    id: '19',
+    title: 'Car Rental System',
+    description: 'Vehicle rental platform with booking management, fleet tracking, and payment processing.',
+    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Laravel', 'PostgreSQL', 'Tailwind CSS'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '20',
+    title: 'News Aggregator',
+    description: 'News aggregation platform with content filtering, user preferences, and personalized feeds.',
+    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'News API'],
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+  {
+    id: '21',
+    title: 'Customer Relationship Manager',
+    description: 'CRM system with lead tracking, sales pipeline, and customer communication features.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'React', 'MySQL', 'Bootstrap'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '22',
+    title: 'Online Auction Platform',
+    description: 'Bidding platform with real-time auctions, payment integration, and seller management.',
+    image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Socket.io', 'MongoDB', 'Stripe'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '23',
+    title: 'Travel Booking Platform',
+    description: 'Travel booking system with flight search, hotel reservations, and itinerary planning.',
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Amadeus API'],
+    featured: true,
+  },
+  {
+    id: '24',
+    title: 'Video Streaming Platform',
+    description: 'Video streaming service with transcoding, user accounts, and watch history tracking.',
+    image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8efe85?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Node.js', 'AWS S3', 'CloudFront'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '25',
+    title: 'Email Marketing Platform',
+    description: 'Email campaign manager with templates, automation, and analytics dashboard.',
+    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'SendGrid'],
+    featured: false,
+  },
+  {
+    id: '26',
+    title: 'Point of Sale System',
+    description: 'POS application with inventory tracking, sales reports, and receipt generation.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    technologies: ['React', 'Electron', 'SQLite', 'Node.js'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '27',
+    title: 'Online Polling System',
+    description: 'Voting platform with real-time results, multiple question types, and response analytics.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'WebSocket'],
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+  {
+    id: '28',
+    title: 'Fleet Management System',
+    description: 'Vehicle tracking system with GPS integration, maintenance scheduling, and driver management.',
+    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'React', 'MySQL', 'Google Maps API'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '29',
+    title: 'Wedding Planning Platform',
+    description: 'Wedding management system with vendor coordination, guest list, and budget tracking.',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    featured: false,
+  },
+  {
+    id: '30',
+    title: 'Music Streaming App',
+    description: 'Music streaming platform with playlists, artist profiles, and audio streaming features.',
+    image: 'https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'AWS', 'Spotify API'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '31',
+    title: 'Online Code Editor',
+    description: 'Browser-based code editor with syntax highlighting, collaboration, and cloud storage.',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
+    technologies: ['React', 'Monaco Editor', 'Node.js', 'MongoDB'],
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: '32',
+    title: 'Warehouse Management System',
+    description: 'Inventory tracking system with barcode scanning, order fulfillment, and reporting.',
+    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '33',
+    title: 'Social Media Scheduler',
+    description: 'Content scheduling tool with post preview, analytics, and multi-platform support.',
+    image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '34',
+    title: 'Appointment Scheduling App',
+    description: 'Online booking system with calendar integration, reminders, and customer management.',
+    image: 'https://images.unsplash.com/photo-1503428593586-e225b476d388?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Calendar API'],
+    featured: false,
+  },
+  {
+    id: '35',
+    title: 'Expense Tracker',
+    description: 'Personal finance application with expense categorization, budget planning, and reports.',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    technologies: ['React Native', 'Firebase', 'React'],
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: '36',
+    title: 'Multi-Vendor E-Commerce',
+    description: 'Marketplace platform with vendor stores, product listings, and commission management.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'Stripe Connect'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '37',
+    title: 'Online PDF Editor',
+    description: 'PDF manipulation tool with annotation, conversion, and document merging features.',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'React', 'Node.js', 'PDF.js'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '38',
+    title: 'Church Management System',
+    description: 'Church administration platform with member database, event planning, and donation tracking.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '39',
+    title: 'Food Recipe App',
+    description: 'Recipe sharing platform with meal planning, shopping lists, and nutritional information.',
+    image: 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&h=600&fit=crop',
+    technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: '40',
+    title: 'Online Exam Proctoring',
+    description: 'Remote proctoring system with screen recording, face detection, and AI monitoring.',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TensorFlow.js', 'Node.js', 'WebRTC'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '41',
+    title: 'Gym Management System',
+    description: 'Fitness center management with membership tracking, workout scheduling, and payments.',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'Stripe'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '42',
+    title: 'URL Shortener Service',
+    description: 'URL shortening platform with analytics, custom links, and team management.',
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'Redis', 'PostgreSQL'],
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+  {
+    id: '43',
+    title: 'Real-time Chat Application',
+    description: 'Messaging platform with channels, direct messages, file sharing, and notifications.',
+    image: 'https://images.unsplash.com/photo-1611746872915-64382b5c2b36?w=800&h=600&fit=crop',
+    technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: '44',
+    title: 'Online Resume Builder',
+    description: 'Resume creation tool with templates, PDF export, and job application tracking.',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'React', 'Node.js', 'PDFKit'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '45',
+    title: 'Invoice Management System',
+    description: 'Billing platform with invoice generation, payment tracking, and client management.',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'React', 'MySQL', 'Razorpay'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '46',
+    title: 'Pet Care Platform',
+    description: 'Pet management system with vet appointments, vaccination tracking, and pet profiles.',
+    image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    featured: false,
+  },
+  {
+    id: '47',
+    title: 'Weather Dashboard',
+    description: 'Weather forecasting application with location-based alerts and historical data.',
+    image: 'https://images.unsplash.com/photo-1590051807007-012572f5783f?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'OpenWeatherMap API', 'Chart.js'],
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+  {
+    id: '48',
+    title: 'Book Library System',
+    description: 'Digital library with book catalog, borrowing management, and reading progress.',
+    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=600&fit=crop',
+    technologies: ['Laravel', 'Vue.js', 'MySQL', 'Bootstrap'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '49',
+    title: 'Task Automation Platform',
+    description: 'Workflow automation tool with triggers, actions, and third-party integrations.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'React', 'Node.js', 'Webhook'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: '50',
+    title: 'Online Survey Builder',
+    description: 'Survey creation tool with multiple question types, responses, and analytics.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+  {
+    id: '51',
+    title: 'Yoga Studio Booking',
+    description: 'Yoga class booking platform with instructor profiles and subscription management.',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Laravel', 'MySQL', 'Stripe'],
+    liveUrl: 'https://example.com',
+    featured: false,
+  },
+  {
+    id: '52',
+    title: 'Digital Business Card',
+    description: 'Virtual business card creator with QR codes and contact sharing features.',
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=600&fit=crop',
+    technologies: ['React Native', 'Firebase', 'React'],
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+]
+
+export const testimonials: Testimonial[] = [
+  {
+    id: '1',
+    name: 'Sarah Ahmed',
+    position: 'CEO',
+    company: 'TechStart Solutions',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
+    message: 'Noman is an exceptional developer who delivered our project on time and exceeded our expectations. His expertise in both frontend and backend technologies is remarkable. Highly recommended!',
+    rating: 5,
+  },
+  {
+    id: '2',
+    name: 'Ahmed Khan',
+    position: 'Product Manager',
+    company: 'InnovateTech',
+    message: 'Working with Noman was a great experience. He understood our requirements perfectly and provided innovative solutions that improved our product significantly. His communication skills are excellent.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+  },
+  {
+    id: '3',
+    name: 'Maria Sheikh',
+    position: 'Founder',
+    company: 'Digital Agency',
+    message: 'Noman transformed our outdated website into a modern, responsive platform. His attention to detail and creative approach resulted in a 200% increase in user engagement. Fantastic work!',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+  },
+  {
+    id: '4',
+    name: 'John Davis',
+    position: 'CTO',
+    company: 'StartupHub',
+    message: 'We hired Noman for a complex web application project. His technical skills and problem-solving abilities are outstanding. He delivered a robust solution that scaled perfectly.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+  },
+]
+
+export const stats = {
+  yearsExperience: 5,
+  projectsCompleted: 50,
+  happyClients: 30,
+  cupsOfCoffee: 500,
+}
